@@ -62,7 +62,14 @@
             font-size: 10px;
             color: var(--secondary-text-color);
           }
-          .entity:last-of-type {
+          .entities {
+            flex-direction: row;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 0;
+        }
+        .entity:last-of-type {
             margin-right: 0;
           }
           .state {
@@ -89,12 +96,14 @@
                     ${this.state.name}
                     <div class="secondary">${this.renderSecondaryInfo()}</div>
                 </div>
-                ${this.state.entities.map(entity => this.renderEntity(entity))}
-                ${this.state.value ? html`
-                <div class="state entity" @click="${this.onStateClick}">
-                    ${this.stateHeader && html`<span>${this.stateHeader}</span>`}
-                    ${this.renderMainState()}
-                </div>` : null}
+                <div class="entities">
+                    ${this.state.entities.map(entity => this.renderEntity(entity))}
+                    ${this.state.value ? html`
+                    <div class="state entity" @click="${this.onStateClick}">
+                        ${this.stateHeader && html`<span>${this.stateHeader}</span>`}
+                        ${this.renderMainState()}
+                    </div>` : null}
+                </div>
             </div>`;
         }
 
