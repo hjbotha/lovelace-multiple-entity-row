@@ -68,8 +68,8 @@
             justify-content: space-between;
             align-items: center;
             min-width: 0;
-        }
-        .entity:last-of-type {
+          }
+          .entity:last-of-type {
             margin-right: 0;
           }
           .state {
